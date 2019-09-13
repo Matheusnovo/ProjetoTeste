@@ -1,0 +1,80 @@
+﻿<div>
+    <h1>Cliente</h1>
+    <form>
+        <div class="form-group">
+            <label for="Nome">Cliente</label>
+            <input type="text" class="form-control" ng-model="model.Nome" id="Nome">
+        </div>
+        <div class="form-group">
+            <label for="CPF">CPF</label>
+            <input type="text" class="form-control" ng-model="model.CPF_CNPJ" id="CPF">
+        </div>
+        <div class="form-group">
+            <label for="data">Data de Cadastro</label>
+            <input type="date" class="form-control" ng-model="model.DataCadastro" id="data">
+        </div>
+        <button type="submit" class="btn btn-primary" ng-click="save()">Salvar</button>
+    </form>
+    <h1>Produtos</h1>
+    <button type="button" ng-click="inserirProduto()" class="col-sm-4 btn btn-light">InserirProduto</button>
+    <table id="produtos" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Valor</th>
+                <th>Tipo</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Valor</th>
+                <th>Tipo</th>
+                <th>Quantidade</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<div class="modal fade" id="modalProduto" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{modalP.Nome}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label class="col-form-label">Nome:</label>
+                        <input type="text" ng-model="modalP.Nome" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Valor:</label>
+                        <input type="text" ng-model="modalP.Valor" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Tipo:</label>
+                        <input type="text" ng-model="modalP.Tipo" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Peso:</label>
+                        <input type="text" ng-model="modalP.Peso" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Quantidade:</label>
+                        <input type="text" ng-model="modalP.Quantidade" class="form-control">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" ng-click="inserirProduto(modalP)" class="btn btn-primary">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
